@@ -57,6 +57,9 @@ class ClientsTableSeeder extends Seeder
         $t4->especialidad = "Musculación";
         $t4->turno = "Tarde";
         $t4->save();
-        $t4->clients()->saveMany([$c0, $c1, $c2, $c3]);        
+
+        $t4->clients()->saveMany([$c2]);   
+        
+        $c3->trainers()->associate($t4);
     }
 }

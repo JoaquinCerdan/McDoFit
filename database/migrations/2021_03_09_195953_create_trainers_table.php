@@ -14,7 +14,7 @@ class CreateTrainersTable extends Migration
     public function up()
     {
         Schema::create('trainers', function (Blueprint $table) {
-            $table->bigIncrements('numEntrenador');
+            $table->bigIncrements('id');
             $table->timestamps();
             $table->String('nombreCompleto');
             $table->String('direccion');

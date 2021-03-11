@@ -14,8 +14,8 @@ class AddTrainerToClientTable extends Migration
     public function up()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->unsignedBigInteger("trainer_numEntrenador");
-            $table->foreign("trainer_numEntrenador")->references("numEntrenador")->on("trainers");
+            $table->unsignedBigInteger("trainer_id");
+            $table->foreign("trainer_id")->references("id")->on("trainers")->nullable();
         });
     }
 
@@ -27,7 +27,8 @@ class AddTrainerToClientTable extends Migration
     public function down()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->dropColumn("trainer_numEntrenador");
+            $table->dropForeign("clients_trainer_id_foreign");
+            $table->dropColumn("trainer_id");
         });
     }
 }
