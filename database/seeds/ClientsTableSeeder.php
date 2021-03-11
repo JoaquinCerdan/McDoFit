@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Client;
+use App\Trainer;
 
 class ClientsTableSeeder extends Seeder
 {
@@ -20,7 +21,6 @@ class ClientsTableSeeder extends Seeder
         $c0->numCuenta = "ES8372839498392847239231";
         $c0->numTelefono = 605829103;
         $c0->fechaAlta = date_create('2020-07-01');
-        $c0->save();
 
         $c1 = new Client();
         $c1->nombreCompleto = "Jacobo García García";
@@ -30,7 +30,6 @@ class ClientsTableSeeder extends Seeder
         $c1->numCuenta = "ES8372839494492849239292";
         $c1->numTelefono = 605025431;
         $c1->fechaAlta = date_create('2021-03-03');
-        $c1->save();
 
         $c2 = new Client();
         $c2->nombreCompleto = "Rubén Doblas Pérez";
@@ -40,7 +39,6 @@ class ClientsTableSeeder extends Seeder
         $c2->numCuenta = "ES8938239498392847231821";
         $c2->numTelefono = 634873403;
         $c2->fechaAlta = date_create('2020-11-30');
-        $c2->save();
 
         $c3 = new Client();
         $c3->nombreCompleto = "Elisa Martínez Garatea";
@@ -50,7 +48,15 @@ class ClientsTableSeeder extends Seeder
         $c3->numCuenta = "ES9999839498392847233214";
         $c3->numTelefono = 611223193;
         $c3->fechaAlta = date_create('2021-01-02');
-        $c3->save();
-        
+
+        $t4 = new Trainer();
+        $t4->nombreCompleto = "Pedro Picarocas Lopez";
+        $t4->direccion = "C/ San Peter Burgos, 28";
+        $t4->numCuenta = "ES4172838893243847128451";
+        $t4->numTelefono = 611759323;
+        $t4->especialidad = "Musculación";
+        $t4->turno = "Tarde";
+        $t4->save();
+        $t4->clients()->saveMany([$c0, $c1, $c2, $c3]);        
     }
 }
