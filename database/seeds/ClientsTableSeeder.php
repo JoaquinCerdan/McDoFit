@@ -58,8 +58,19 @@ class ClientsTableSeeder extends Seeder
         $t4->turno = "Tarde";
         $t4->save();
 
-        $t4->clients()->saveMany([$c2]);   
+        $t5 = new Trainer();
+        $t5->nombreCompleto = "Antonio Trancos Lago";
+        $t5->direccion = "C/ Romeo, 67";
+        $t5->numCuenta = "ES41728388939853847128473";
+        $t5->numTelefono = 612745721;
+        $t5->especialidad = "Spinning";
+        $t5->turno = "Mañana";
+        $t5->save();
+
+        $t4->clients()->saveMany([$c0, $c1, $c2]);   
         
-        $c3->trainers()->associate($t4);
+        $t5->clients()->saveMany([$c3]); 
+        
+        
     }
 }

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Client extends Model
 {
     public function trainers(){
-        return $this->hasMany("App\Trainer");
+        return $this->belongsTo("App\Trainer");
     }
 }
