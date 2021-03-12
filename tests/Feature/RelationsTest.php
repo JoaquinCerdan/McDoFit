@@ -91,7 +91,7 @@ class RelationsTest extends TestCase
         //echo "Esto es trainer->nombrecompleto : ".$trainer->direccion;
         //echo "Esto es trainer->nombrecompleto : ".$trainer->nombreCompleto;
         
-
+        //echo "Esto tambien es una preuba.";
 
 
         $client1->delete();
