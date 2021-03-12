@@ -14,8 +14,8 @@ class AddTrainerToClientTable extends Migration
     public function up()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->unsignedBigInteger("trainer_id");
-            $table->foreign("trainer_id")->references("id")->on("trainers")->nullable();
+            $table->unsignedBigInteger("trainer_id")->nullable();
+            $table->foreign("trainer_id")->references("id")->on("trainers");
         });
     }
 

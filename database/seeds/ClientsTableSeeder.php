@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Client;
 use App\Trainer;
+use App\Machine;
 
 class ClientsTableSeeder extends Seeder
 {
@@ -39,6 +40,7 @@ class ClientsTableSeeder extends Seeder
         $c2->numCuenta = "ES8938239498392847231821";
         $c2->numTelefono = 634873403;
         $c2->fechaAlta = date_create('2020-11-30');
+        $c2->save();
 
         $c3 = new Client();
         $c3->nombreCompleto = "Elisa Martínez Garatea";
@@ -67,10 +69,25 @@ class ClientsTableSeeder extends Seeder
         $t5->turno = "Mañana";
         $t5->save();
 
-        $t4->clients()->saveMany([$c0, $c1, $c2]);   
+        $t4->clients()->saveMany([$c0, $c1]);   
         
         $t5->clients()->saveMany([$c3]); 
         
-        
+        $m4 = new Machine();
+        $m4->nombre = "Spinning 4";
+        $m4->sala = "Sala Spinning";
+        $m4->vecesUtilizada = 6040;
+        $m4->disponible = true;
+        $m4->save();
+
+        $m5 = new Machine();
+        $m5->nombre = "Spinning 5";
+        $m5->sala = "Sala Spinning";
+        $m5->vecesUtilizada = 6047;
+        $m5->disponible = true;
+        $m5->save();
+
+        $c1->machines()->attach($m4);
+        $c2->machines()->attach($m5);
     }
 }
