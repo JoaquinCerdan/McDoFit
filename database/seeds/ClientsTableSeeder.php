@@ -71,7 +71,7 @@ class ClientsTableSeeder extends Seeder
 
         $t4->clients()->saveMany([$c0, $c1]);   
         
-        $t5->clients()->saveMany([$c3]); 
+        $t5->clients()->saveMany([$c0, $c3]); 
         
         $m4 = new Machine();
         $m4->nombre = "Spinning 4";

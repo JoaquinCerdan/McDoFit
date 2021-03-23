@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-    public function trainers(){
+    public function trainer(){
         return $this->belongsTo("App\Trainer");
     }
 

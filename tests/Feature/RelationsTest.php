@@ -85,7 +85,7 @@ class RelationsTest extends TestCase
         //echo "Esto es var dump:";
         //print_r($client1);
 
-        //$this->assertEquals($client1->trainers->nombreCompleto, "ArnolMartinezSuaseneguer");
+        $this->assertEquals($client1->trainer->nombreCompleto, "ArnolMartinezSuaseneguer");
         $this->assertEquals($trainer->clients[0]->nombreCompleto,"Elisa Lopez Garatea");
 
         //echo "Esto es trainer->nombrecompleto : ".$trainer->direccion;
