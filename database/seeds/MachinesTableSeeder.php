@@ -13,19 +13,17 @@ class MachinesTableSeeder extends Seeder
      */
     public function run()
     {
-        /*
-        $r0 = new Room();
-        $r0->nombre = "Aseo";
-        $r0->metrosCuadrados = 6;
-        $r0->planta = 1;
-        $r0->capacidad = 200;
-        $r0->aireAcondicionado = true;
-        $r0->ventana = 1;
-        $r0->especialidad = "Almacenaje";
-        $r0->disponible = true;
-        $r0->save();
-        */
         
+        $r1 = new Room();
+        $r1->nombre = "Trastero";
+        $r1->metrosCuadrados = 40;
+        $r1->planta = 0;
+        $r1->capacidad = 200;
+        $r1->aireAcondicionado = true;
+        $r1->ventana = 0;
+        $r1->especialidad = "Almacenaje";
+        $r1->disponible = true;
+        $r1->save();   
 
         $m0 = new Machine();
         $m0->nombre = "Press Banca";
@@ -55,6 +53,6 @@ class MachinesTableSeeder extends Seeder
         $m3->disponible = true;
         //$m3->save();
 
-        $r0->machines()->saveMany([$m0, $m1, $m2, $m3]);  
+        $r1->machines()->saveMany([$m0, $m1, $m2, $m3]);  
     }
 }
