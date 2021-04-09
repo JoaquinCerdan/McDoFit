@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Client;
 use App\Trainer;
 use App\Machine;
+use App\Room;
 
 class ClientsTableSeeder extends Seeder
 {
@@ -72,22 +73,39 @@ class ClientsTableSeeder extends Seeder
         $t4->clients()->saveMany([$c0, $c1]);   
         
         $t5->clients()->saveMany([$c0, $c3]); 
+
+        
+        $r0 = new Room();
+        $r0->nombre = "Aseo";
+        $r0->metrosCuadrados = 6;
+        $r0->planta = 1;
+        $r0->capacidad = 200;
+        $r0->aireAcondicionado = true;
+        $r0->ventana = 1;
+        $r0->especialidad = "Almacenaje";
+        $r0->disponible = true;
+        $r0->save();
         
         $m4 = new Machine();
         $m4->nombre = "Spinning 4";
         $m4->sala = "Sala Spinning";
         $m4->vecesUtilizada = 6040;
         $m4->disponible = true;
-        $m4->save();
+        //$m4->save();
 
         $m5 = new Machine();
         $m5->nombre = "Spinning 5";
         $m5->sala = "Sala Spinning";
         $m5->vecesUtilizada = 6047;
         $m5->disponible = true;
-        $m5->save();
+        //$m5->save();
+
+        $r0->machines()->saveMany([$m4, $m5]);
 
         $c1->machines()->attach($m4);
         $c2->machines()->attach($m5);
+
+                 
+        
     }
 }
