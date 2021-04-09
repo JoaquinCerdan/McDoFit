@@ -13,4 +13,8 @@ class Client extends Model
     public function machines(){
         return $this->belongsToMany("App\Machine");
     }
+
+    public function trainings(){
+        return $this->belongsToMany("App\Training");
+    }
 }

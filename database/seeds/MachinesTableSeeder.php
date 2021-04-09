@@ -53,6 +53,7 @@ class MachinesTableSeeder extends Seeder
         $m3->disponible = true;
         //$m3->save();
 
+        //$r1 = Room::find(1);
         $r1->machines()->saveMany([$m0, $m1, $m2, $m3]);  
     }
 }

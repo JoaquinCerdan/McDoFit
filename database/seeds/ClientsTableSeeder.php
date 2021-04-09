@@ -5,6 +5,7 @@ use App\Client;
 use App\Trainer;
 use App\Machine;
 use App\Room;
+use App\Training;
 
 class ClientsTableSeeder extends Seeder
 {
@@ -102,8 +103,20 @@ class ClientsTableSeeder extends Seeder
 
         $r0->machines()->saveMany([$m4, $m5]);
 
+        $ting3 = new Training();
+        $ting3->horario = date_create('2000-01-01 19:00:00');
+        $ting3->nombre = "Spinning 400";
+        $ting3->capacidad = 50;
+        $ting3->duracion = 90;
+        $ting3->nivel = "Medio";
+        $ting3->save();
+
+        $r0->trainings()->saveMany([$ting3]);
+
         $c1->machines()->attach($m4);
         $c2->machines()->attach($m5);
+
+        $c1->trainings()->attach($ting3);
 
                  
         
