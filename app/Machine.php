@@ -10,7 +10,7 @@ class Machine extends Model
         return $this->belongsToMany("App\Client");
     }
 
-    public function rooms(){
+    public function room(){
         return $this->belongsTo("App\Room");
     }
 }

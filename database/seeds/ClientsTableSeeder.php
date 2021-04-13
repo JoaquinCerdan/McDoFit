@@ -70,6 +70,7 @@ class ClientsTableSeeder extends Seeder
         $t5->especialidad = "Spinning";
         $t5->turno = "Mañana";
         $t5->save();
+        
 
         $t4->clients()->saveMany([$c0, $c1]);   
         
@@ -109,6 +110,11 @@ class ClientsTableSeeder extends Seeder
         $ting3->capacidad = 50;
         $ting3->duracion = 90;
         $ting3->nivel = "Medio";
+
+        $ting3->room()->associate($r0);
+        $ting3->trainer()->associate($t4);
+
+
         $ting3->save();
 
         $r0->trainings()->saveMany([$ting3]);
@@ -117,6 +123,8 @@ class ClientsTableSeeder extends Seeder
         $c2->machines()->attach($m5);
 
         $c1->trainings()->attach($ting3);
+
+     
 
                  
         

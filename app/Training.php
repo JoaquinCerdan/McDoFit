@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Training extends Model
 {
-    public function rooms(){
+    public function room(){
         return $this->belongsTo("App\Room");
     }
 
-    public function trainers(){
+    public function trainer(){
         return $this->belongsTo("App\Trainer");
     }
 
