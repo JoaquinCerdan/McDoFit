@@ -97,11 +97,11 @@ class TrainingsTableSeeder extends Seeder
         $ting0->room()->associate($r2);
         $ting0->trainer()->associate($t5);
         
-        //$ting1->room()->associate($r2);
-        //$ting1->trainer()->associate($t6);
+        $ting1->room()->associate($r2);
+        $ting1->trainer()->associate($t6);
 
         $ting0->save();
-        //$ting1->save();
+        $ting1->save();
         
         $r2->trainings()->saveMany([$ting0]);
         

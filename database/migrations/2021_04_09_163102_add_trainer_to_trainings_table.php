@@ -15,7 +15,7 @@ class AddTrainerToTrainingsTable extends Migration
     {
         Schema::table('trainings', function (Blueprint $table) {
             $table->unsignedBigInteger("trainer_id");
-            $table->foreign("trainer_id")->references("id")->on("trainings");
+            $table->foreign("trainer_id")->references("id")->on("trainers");
         });
     }
 
