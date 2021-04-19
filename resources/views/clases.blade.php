@@ -1,1 +1,4 @@
-@extends('master');
+@extends('master')
+
+
+Esto es clases

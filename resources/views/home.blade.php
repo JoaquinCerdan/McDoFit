@@ -1,3 +1,1 @@
-@extends('master');
-
-@section('title','McDoFit');
+@extends('master')

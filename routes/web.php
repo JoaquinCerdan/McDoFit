@@ -17,5 +17,9 @@ Route::get('/', function () {
 */
 
 Route::get('/', function () {
-    return view('clases');
+    return view('home');
 });
+
+
+Route::get('training','TrainingController@listTrainings');
+Route::get('maquinas','MachineController@listMachines');

@@ -21,7 +21,7 @@ class CreateClientTrainingTable extends Migration
 
             $table->primary(["client_id", "training_id"]);
 
-            $table->foreign("training_id")->references("id")->on("trainers");
+            $table->foreign("training_id")->references("id")->on("trainings");
             $table->foreign("client_id")->references("id")->on("clients");
         });
     }
