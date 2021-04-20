@@ -82,6 +82,7 @@
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
       <title>@yield("title")</title>
       <li></li>
+      <li><a href="{{ action('ClientController@listClients') }}" class="nav-link px-2 link-dark">CLIENTES</a></li>
       <li><a href="{{ action('MachineController@listMachines') }}" class="nav-link px-2 link-dark">MAQUINAS</a></li>
       <li><a href="{{ action('TrainingController@listTrainings') }}" class="nav-link px-2 link-dark">CLASES</a></li>
       <li><a href="#" class="nav-link px-2 link-dark"></a></li>
