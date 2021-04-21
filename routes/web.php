@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Route::get('training','TrainingController@listTrainings');
 Route::get('maquinas','MachineController@listMachines');
+
 Route::get('trainersAdmin','TrainerController@listTrainers');
 Route::get('addTrainer','TrainerController@addTrainer');
 
@@ -33,6 +34,11 @@ Route::get('modifyTrainer/{id}','TrainerController@modifyTrainer');
 Route::post('modifyTrainer/{id}','TrainerController@modifyTrainer');
 
 
-//para borrar
+//para borrar trainer
 Route::get('deleteTrainer/{id}','TrainerController@deleteTrainer');
 Route::post('deleteTrainer/{id}','TrainerController@deleteTrainer');
+
+//para ver la página de mi cuenta
+Route::get('redirectMiCuenta','TrainerController@redirectMiCuenta');
+
+//para ver los trainers en version admin
