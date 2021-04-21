@@ -4,10 +4,23 @@
 
 @section("content")
 
+<table class="table table-striped">
+<tr>
+    <th>Nombre</th><th>Nivel</th>
+</tr>
+
 @foreach ( $trainings as $training)
-
-{{$training->nombre}} <br/>
-
+<tr>
+<td>{{$training->nombre}}</td><td>{{$training->nivel}}</td>
+</tr>
 @endforeach
+</table>
+
+
+@if(isset($sort))
+        {{  $trainings->appends(['sort'=>$sort])->links() }}
+@else
+        {{  $trainings->links() }}
+@endif
 
 @endsection

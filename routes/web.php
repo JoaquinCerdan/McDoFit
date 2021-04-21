@@ -10,16 +10,41 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
 
 Route::get('/', function () {
     return view('home');
 });
 
-
 Route::get('training','TrainingController@listTrainings');
 Route::get('maquinas','MachineController@listMachines');
+
+Route::get('clientes','ClientController@listClients');
+Route::get('clientes/{id}','ClientController@formularioModificarClients');
+Route::post('clientes/{id}','ClientController@modificarClients');
+
+Route::get('borrar/{id}','ClientController@borrarClients');
+Route::post('borrar/{id}','ClientController@borrarClients');
+
+Route::get('addCliente','ClientController@addCliente');
+Route::post('addCliente','ClientController@addCliente');
+
+Route::get('add','ClientController@add');
+Route::post('add','ClientController@add');
+
+
+
+Route::get('trainersAdmin','TrainerController@listTrainers');
+Route::get('addTrainer','TrainerController@addTrainer');
+
+Route::post('insertTrainer','TrainerController@insertTrainer');
+
+
+Route::get('modifyTrainer/{id}','TrainerController@modifyTrainer');
+Route::post('modifyTrainer/{id}','TrainerController@modifyTrainer');
+
+
+//para borrar
+Route::get('deleteTrainer/{id}','TrainerController@deleteTrainer');
+Route::post('deleteTrainer/{id}','TrainerController@deleteTrainer');
+
+
