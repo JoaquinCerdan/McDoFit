@@ -89,4 +89,16 @@ class TrainerController extends Controller
 
         return redirect('trainersAdmin');
     }
+
+
+
+    public function redirectMiCuenta(){
+
+        return view('vistaAdmin');
+    }
+
+
+    
+
+
 }
