@@ -27,7 +27,7 @@ class TrainingController extends Controller
             $sort = null;
             $t = Training::paginate(2);
         }
-        return view("listaTrainings",["trainings"=>$t,'sort'=>$sort]);
+        return view("listaTrainingsAdmin",["trainings"=>$t,'sort'=>$sort]);
     }
 
     public function addTraining(Request $request) {
