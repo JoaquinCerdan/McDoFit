@@ -50,7 +50,8 @@ Route::post('deleteTrainer/{id}','TrainerController@deleteTrainer');
 Route::get('redirectMiCuenta','TrainerController@redirectMiCuenta');
 
 //para ver los trainers en version admin
-Route::get('trainingAdmin','TrainingController@listTrainingsAdmin');
+
+Route::get('listTrainingsAdmin','TrainingController@listTrainingsAdmin');
 
 Route::get('addTraining','TrainingController@addTraining');
 Route::post('insertTraining','TrainingController@insertTraining');
