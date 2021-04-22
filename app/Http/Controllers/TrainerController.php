@@ -41,9 +41,20 @@ class TrainerController extends Controller
         $trainer->numTelefono = $request->input('numTelefono');
         $trainer->turno = $request->input('turno');
         $trainer->especialidad = $request->input('especialidad');
-        $trainer->save();
 
-        return view("popup",['name'=>$trainer,'accion'=>'insertado']);
+
+        if( $trainer->nombreCompleto != null && $trainer->direccion != null &&
+            $trainer->numCuenta != null && $trainer->numTelefono != null &&
+            $trainer->turno != null && $trainer->especialidad != null){
+
+                $trainer->save();
+                return view("popup",['name'=>$trainer,'accion'=>'insertado']);
+            }
+            else{
+                return view("insertTrainer",["trainers"=>$trainer]);
+            }
+
+        
     }
 
 
