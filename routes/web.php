@@ -61,3 +61,17 @@ Route::post('modifyTraining/{id}','TrainingController@modifyTraining');
 
 Route::get('deleteTraining/{id}','TrainingController@deleteTraining');
 Route::post('deleteTraining/{id}','TrainingController@deleteTraining');
+
+//para ver las machines en version admin
+
+Route::get('maquinasAdmin','MachineController@listMachinesAdmin');
+
+Route::get('deleteMachine/{id}','MachineController@deleteMachine');
+Route::post('deleteMachine/{id}','MachineController@deleteMachine');
+
+//salas
+Route::get('salasAdmin','RoomController@listRooms');
+
+Route::get('deleteRoom/{id}','RoomController@deleteRoom');
+Route::post('deleteRoom/{id}','RoomController@deleteRoom');
+
