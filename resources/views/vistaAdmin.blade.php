@@ -9,5 +9,5 @@
 <a href="{{ action('ClientController@listClients') }}"><button>Administrar usuarios</button></a>
 <a href="{{ action('TrainerController@listTrainers') }}"><button>Administrar entrenadores</button></a>
 <a href="{{ action('RoomController@listRooms') }}"><button>Administrar salas</button></a>
-
+<br><th><a href=/MiCuenta>Volver</a></th></br>
 @endsection

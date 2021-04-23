@@ -13,10 +13,10 @@ class ClientController extends Controller
 
         if($request->has("sort")){
             $sort = $request->input("sort") ;
-            $c = Client::orderBy($sort )->paginate(5);
+            $c = Client::orderBy($sort )->paginate(7);
         }else{
             $sort = null;
-            $c = Client::paginate(5);
+            $c = Client::paginate(7);
         }
         return view("clientes.listaClientes",["clients"=>$c,'sort'=>$sort]);
     }

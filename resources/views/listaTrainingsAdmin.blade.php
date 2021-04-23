@@ -26,5 +26,5 @@
 @endif
 
 <a href="{{ action('TrainingController@addTraining') }}"><button type="button" class="btn btn-primary btn-lg">Añadir nueva clase</button></a>
-
+<th><a href=/menuAdmin>Volver</a></th>
 @endsection

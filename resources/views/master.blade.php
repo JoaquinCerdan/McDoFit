@@ -87,7 +87,7 @@
       <li><a href="#" class="nav-link px-2 link-dark"></a></li>
     </ul>
     <div class="col-md-3 text-end">
-    <a  href="{{ action('TrainerController@redirectMiCuenta') }}"><button type="button" class="btn btn-outline-primary me-2">MI CUENTA</button></a>
+    <a  href="{{ action('MiCuentaController@menuCuenta') }}"><button type="button" class="btn btn-outline-primary me-2">MI CUENTA</button></a>
       
     </div>
   </header>

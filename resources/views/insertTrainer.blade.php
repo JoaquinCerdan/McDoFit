@@ -39,5 +39,5 @@
 
 </form>
 
-
+<th><a href=/trainersAdmin>Volver</a></th>
 @endsection

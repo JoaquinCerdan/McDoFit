@@ -123,10 +123,10 @@ class TrainingController extends Controller
 
         if($request->has("sort")){
             $sort = $request->input("sort") ;
-            $t = Training::orderBy($sort )->paginate(2);
+            $t = Training::orderBy($sort )->paginate(7);
         }else{
             $sort = null;
-            $t = Training::paginate(2);
+            $t = Training::paginate(7);
         }
 
         return view("listaTrainingsAdmin",["trainings"=>$t,'sort'=>$sort]);

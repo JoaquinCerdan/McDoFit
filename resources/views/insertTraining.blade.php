@@ -35,5 +35,6 @@
 
 </form>
 
+<th><a href=/listTrainingsAdmin>Volver</a></th>
 
 @endsection

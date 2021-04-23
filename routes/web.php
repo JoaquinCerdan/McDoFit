@@ -31,6 +31,8 @@ Route::post('addCliente','ClientController@addCliente');
 Route::get('add','ClientController@add');
 Route::post('add','ClientController@add');
 
+Route::get('MiCuenta','MiCuentaController@menuCuenta');
+
 
 Route::get('trainersAdmin','TrainerController@listTrainers');
 Route::get('addTrainer','TrainerController@addTrainer');
@@ -47,7 +49,7 @@ Route::get('deleteTrainer/{id}','TrainerController@deleteTrainer');
 Route::post('deleteTrainer/{id}','TrainerController@deleteTrainer');
 
 //para ver la página de mi cuenta
-Route::get('redirectMiCuenta','TrainerController@redirectMiCuenta');
+Route::get('menuAdmin','MiCuentaController@menuAdmin');
 
 //para ver los trainers en version admin
 

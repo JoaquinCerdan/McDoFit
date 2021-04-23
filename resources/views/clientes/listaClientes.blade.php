@@ -33,6 +33,6 @@
 
 
 <a href="{{ action('ClientController@addCliente') }}"><button type="button" class="btn btn-primary btn-lg">Añadir nuevo usuario</button></a>
-<th><a href="{{ action('ClientController@listClients')}}">Volver</a></th>
+<th><a href=/menuAdmin>Volver</a></th>
 @endsection
 
