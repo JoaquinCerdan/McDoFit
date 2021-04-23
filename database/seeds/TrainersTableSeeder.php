@@ -47,5 +47,32 @@ class TrainersTableSeeder extends Seeder
         $t3->especialidad = "Spinning";
         $t3->turno = "Tarde";
         $t3->save();
+
+        $t4 = new Trainer();
+        $t4->nombreCompleto = "Carlos Pozzoni";
+        $t4->direccion = "C/ Rodrigo Cartagena, 12";
+        $t4->numCuenta = "ES4322839400002111392875";
+        $t4->numTelefono = 625487589;
+        $t4->especialidad = "Calistenoa";
+        $t4->turno = "Tarde";
+        $t4->save();
+
+        $t5 = new Trainer();
+        $t5->nombreCompleto = "Alejandra Salazar";
+        $t5->direccion = "C/ Caminante, 34";
+        $t5->numCuenta = "ES4322839400002111392712";
+        $t5->numTelefono = 657325365;
+        $t5->especialidad = "Calistenia";
+        $t5->turno = "Mañana";
+        $t5->save();
+
+        $t6 = new Trainer();
+        $t6->nombreCompleto = "Gemma Triay";
+        $t6->direccion = "C/ Trafalgar, 25";
+        $t6->numCuenta = "ES5822839400002111392787";
+        $t6->numTelefono = 667325963;
+        $t6->especialidad = "HIIT";
+        $t6->turno = "Mañana";
+        $t6->save();
     }
 }

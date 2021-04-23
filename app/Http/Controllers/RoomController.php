@@ -11,10 +11,10 @@ class RoomController extends Controller
 
         if($request->has("sort")){
             $sort = $request->input("sort") ;
-            $r = Room::orderBy($sort )->paginate(2);
+            $r = Room::orderBy($sort )->paginate(7);
         }else{
             $sort = null;
-            $r = Room::paginate(2);
+            $r = Room::paginate(7);
         }
         return view("listaSalas",["rooms"=>$r,'sort'=>$sort]);
     }

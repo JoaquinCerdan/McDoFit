@@ -13,10 +13,10 @@ class TrainerController extends Controller
     public function listTrainers(Request $request) {
         if($request->has("sort")){
             $sort = $request->input("sort") ;
-            $m = Trainer::orderBy($sort )->paginate(2);
+            $m = Trainer::orderBy($sort )->paginate(7);
         }else{
             $sort = null;
-            $m = Trainer::paginate(2);
+            $m = Trainer::paginate(7);
         }
         return view("listaTrainers",["trainers"=>$m,'sort'=>$sort]);
     }
@@ -25,7 +25,7 @@ class TrainerController extends Controller
     public function addTrainer(Request $request) {
         if($request->has("sort")){
             $sort = $request->input("sort") ;
-            $m = Trainer::orderBy($sort )->paginate(2);
+            $m = Trainer::orderBy($sort )->paginate(7);
         }else{
             $sort = null;
             $m = Trainer::paginate(2);
