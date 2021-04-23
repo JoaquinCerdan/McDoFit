@@ -98,7 +98,7 @@ class TrainerController extends Controller
         //para paginar por dos resultados solo
         //$m = Trainer::paginate(2);
 
-        return view('listaTrainers');
+        return redirect('trainersAdmin');
     }
 
 
