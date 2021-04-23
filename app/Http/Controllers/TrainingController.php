@@ -14,10 +14,10 @@ class TrainingController extends Controller
     public function listTrainings(Request $request) {
         if($request->has("sort")){
             $sort = $request->input("sort") ;
-            $m = Training::orderBy($sort )->paginate(2);
+            $m = Training::orderBy($sort )->paginate(7);
         }else{
             $sort = null;
-            $m = Training::paginate(2);
+            $m = Training::paginate(7);
         }
         return view("listaTrainings",["trainings"=>$m,'sort'=>$sort]);
     }
@@ -25,10 +25,10 @@ class TrainingController extends Controller
     public function listTrainingsAdmin(Request $request) {
         if($request->has("sort")){
             $sort = $request->input("sort") ;
-            $t = Training::orderBy($sort )->paginate(2);
+            $t = Training::orderBy($sort )->paginate(7);
         }else{
             $sort = null;
-            $t = Training::paginate(2);
+            $t = Training::paginate(7);
         }
         return view("listaTrainingsAdmin",["trainings"=>$t,'sort'=>$sort]);
     }
@@ -36,12 +36,12 @@ class TrainingController extends Controller
     public function addTraining(Request $request) {
         if($request->has("sort")){
             $sort = $request->input("sort") ;
-            $t = Training::orderBy($sort )->paginate(2);
+            $t = Training::orderBy($sort )->paginate(7);
         }else{
             $sort = null;
-            $t = Training::paginate(2);
+            $t = Training::paginate(7);
         }
-        $trainers = Trainer::paginate(2);
+        $trainers = Trainer::paginate(7);
         return view("insertTraining",["trainings"=>$t, "trainers"=>$trainers,'sort'=>$sort]);
     }
 

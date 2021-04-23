@@ -94,14 +94,81 @@ class TrainingsTableSeeder extends Seeder
         $ting1->duracion = 30;
         $ting1->nivel = "Básico";
 
+        $ting2 = new Training();
+        $ting2->horario = date_create('2020-01-12 9:00:00');
+        $ting2->nombre = "Calistenia 1";
+        $ting2->capacidad = 25;
+        $ting2->duracion = 30;
+        $ting2->nivel = "Básico";
+
+        $ting3 = new Training();
+        $ting3->horario = date_create('2019-12-01 17:30:00');
+        $ting3->nombre = "Calistenia 2";
+        $ting3->capacidad = 15;
+        $ting3->duracion = 60;
+        $ting3->nivel = "Medio";
+
+        $ting4 = new Training();
+        $ting4->horario = date_create('2020-11-12 16:30:00');
+        $ting4->nombre = "Yoga 2";
+        $ting4->capacidad = 20;
+        $ting4->duracion = 60;
+        $ting4->nivel = "Medio";
+
+        $ting5 = new Training();
+        $ting5->horario = date_create('2018-01-01 10:00:00');
+        $ting5->nombre = "Calistenia 3";
+        $ting5->capacidad = 10;
+        $ting5->duracion = 90;
+        $ting5->nivel = "Avanzado";
+
+        $ting6 = new Training();
+        $ting6->horario = date_create('2021-01-23 8:00:00');
+        $ting6->nombre = "Yoga 1";
+        $ting6->capacidad = 30;
+        $ting6->duracion = 30;
+        $ting6->nivel = "Básico";
+
+        $ting7 = new Training();
+        $ting7->horario = date_create('2021-01-14 9:00:00');
+        $ting7->nombre = "Yoga 3";
+        $ting7->capacidad = 10;
+        $ting7->duracion = 90;
+        $ting7->nivel = "Avanzado";
+
         $ting0->room()->associate($r2);
         $ting0->trainer()->associate($t5);
         
         $ting1->room()->associate($r2);
         $ting1->trainer()->associate($t6);
 
+        $ting2->room()->associate($r2);
+        $ting2->trainer()->associate($t6);
+
+        $ting3->room()->associate($r2);
+        $ting3->trainer()->associate($t6);
+
+        $ting4->room()->associate($r2);
+        $ting4->trainer()->associate($t6);
+
+        $ting5->room()->associate($r2);
+        $ting5->trainer()->associate($t6);
+
+        $ting6->room()->associate($r2);
+        $ting6->trainer()->associate($t6);
+
+        $ting7->room()->associate($r2);
+        $ting7->trainer()->associate($t6);
+
         $ting0->save();
         $ting1->save();
+        $ting2->save();
+        $ting3->save();
+        $ting4->save();
+        $ting5->save();
+        $ting6->save();
+        $ting7->save();
+        
         
         $r2->trainings()->saveMany([$ting0]);
         

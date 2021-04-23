@@ -53,6 +53,42 @@ class ClientsTableSeeder extends Seeder
         $c3->numTelefono = 611223193;
         $c3->fechaAlta = date_create('2021-01-02');
 
+        $c4 = new Client();
+        $c4->nombreCompleto = "Agustín Tapia";
+        $c4->tiempoEmpleado = 1023;
+        $c4->taquillaActual = 55;
+        $c4->direccion = "C/ Pedro Ferrandiz, 56";
+        $c4->numCuenta = "ES6499839258392847233084";
+        $c4->numTelefono = 658974319;
+        $c4->fechaAlta = date_create('2019-12-23');
+
+        $c5 = new Client();
+        $c5->nombreCompleto = "Pablo Lima";
+        $c5->tiempoEmpleado = 567;
+        $c5->taquillaActual = 12;
+        $c5->direccion = "C/ Antonio Garcia, 14";
+        $c5->numCuenta = "ES6498439258368947238751";
+        $c5->numTelefono = 965185793;
+        $c5->fechaAlta = date_create('2018-08-12');
+
+        $c6 = new Client();
+        $c6->nombreCompleto = "Franco Stupa";
+        $c6->tiempoEmpleado = 698;
+        $c6->taquillaActual = 34;
+        $c6->direccion = "C/ de las Heras, 7";
+        $c6->numCuenta = "ES8476839258392447238574";
+        $c6->numTelefono = 658987231;
+        $c6->fechaAlta = date_create('2021-02-12');
+
+        $c7 = new Client();
+        $c7->nombreCompleto = "Alejandro Ruiz";
+        $c7->tiempoEmpleado = 9658;
+        $c7->taquillaActual = 31;
+        $c7->direccion = "C/ Seba Nerone, 17";
+        $c7->numCuenta = "ES6499887258392847233596";
+        $c7->numTelefono = 722974879;
+        $c7->fechaAlta = date_create('2017-11-17');
+
         $t4 = new Trainer();
         $t4->nombreCompleto = "Pedro Picarocas Lopez";
         $t4->direccion = "C/ San Peter Burgos, 28";
@@ -72,9 +108,9 @@ class ClientsTableSeeder extends Seeder
         $t5->save();
         
 
-        $t4->clients()->saveMany([$c0, $c1]);   
+        $t4->clients()->saveMany([$c0, $c1, $c5, $c6]);   
         
-        $t5->clients()->saveMany([$c0, $c3]); 
+        $t5->clients()->saveMany([$c0, $c3, $c4, $c7]); 
 
         
         $r0 = new Room();
