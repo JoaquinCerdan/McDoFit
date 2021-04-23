@@ -121,15 +121,7 @@ class TrainingController extends Controller
         $training = Training::findOrFail($id);
         $training->delete();
 
-        if($request->has("sort")){
-            $sort = $request->input("sort") ;
-            $t = Training::orderBy($sort )->paginate(7);
-        }else{
-            $sort = null;
-            $t = Training::paginate(7);
-        }
-
-        return view("listaTrainingsAdmin",["trainings"=>$t,'sort'=>$sort]);
-        //return redirect('trainingsAdmin');
+        //return view("listaTrainingsAdmin",["trainings"=>$training]);
+        return redirect('listTrainingsAdmin');
     }
 }
