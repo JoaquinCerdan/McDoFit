@@ -30,4 +30,5 @@
         {{  $machines->links() }}
 @endif
 
+<th><a href=/>Volver</a></th>
 @endsection

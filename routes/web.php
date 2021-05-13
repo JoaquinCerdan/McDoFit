@@ -31,6 +31,8 @@ Route::post('addCliente','ClientController@addCliente');
 Route::get('add','ClientController@add');
 Route::post('add','ClientController@add');
 
+Route::get('MiCuenta','MiCuentaController@menuCuenta');
+
 
 Route::get('trainersAdmin','TrainerController@listTrainers');
 Route::get('addTrainer','TrainerController@addTrainer');
@@ -47,7 +49,31 @@ Route::get('deleteTrainer/{id}','TrainerController@deleteTrainer');
 Route::post('deleteTrainer/{id}','TrainerController@deleteTrainer');
 
 //para ver la página de mi cuenta
-Route::get('redirectMiCuenta','TrainerController@redirectMiCuenta');
+Route::get('menuAdmin','MiCuentaController@menuAdmin');
 
 //para ver los trainers en version admin
+
+Route::get('listTrainingsAdmin','TrainingController@listTrainingsAdmin');
+
+Route::get('addTraining','TrainingController@addTraining');
+Route::post('insertTraining','TrainingController@insertTraining');
+
+Route::get('modifyTraining/{id}','TrainingController@modifyTraining');
+Route::post('modifyTraining/{id}','TrainingController@modifyTraining');
+
+Route::get('deleteTraining/{id}','TrainingController@deleteTraining');
+Route::post('deleteTraining/{id}','TrainingController@deleteTraining');
+
+//para ver las machines en version admin
+
+Route::get('maquinasAdmin','MachineController@listMachinesAdmin');
+
+Route::get('deleteMachine/{id}','MachineController@deleteMachine');
+Route::post('deleteMachine/{id}','MachineController@deleteMachine');
+
+//salas
+Route::get('salasAdmin','RoomController@listRooms');
+
+Route::get('deleteRoom/{id}','RoomController@deleteRoom');
+Route::post('deleteRoom/{id}','RoomController@deleteRoom');
 

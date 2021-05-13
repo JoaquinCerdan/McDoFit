@@ -13,10 +13,10 @@ class TrainerController extends Controller
     public function listTrainers(Request $request) {
         if($request->has("sort")){
             $sort = $request->input("sort") ;
-            $m = Trainer::orderBy($sort )->paginate(2);
+            $m = Trainer::orderBy($sort )->paginate(7);
         }else{
             $sort = null;
-            $m = Trainer::paginate(2);
+            $m = Trainer::paginate(7);
         }
         return view("listaTrainers",["trainers"=>$m,'sort'=>$sort]);
     }
@@ -25,10 +25,10 @@ class TrainerController extends Controller
     public function addTrainer(Request $request) {
         if($request->has("sort")){
             $sort = $request->input("sort") ;
-            $m = Trainer::orderBy($sort )->paginate(2);
+            $m = Trainer::orderBy($sort )->paginate(7);
         }else{
             $sort = null;
-            $m = Trainer::paginate(2);
+            $m = Trainer::paginate(7);
         }
         return view("insertTrainer",["trainers"=>$m,'sort'=>$sort]);
     }
@@ -41,9 +41,20 @@ class TrainerController extends Controller
         $trainer->numTelefono = $request->input('numTelefono');
         $trainer->turno = $request->input('turno');
         $trainer->especialidad = $request->input('especialidad');
-        $trainer->save();
 
-        return view("popup",['name'=>$trainer,'accion'=>'insertado']);
+
+        if( $trainer->nombreCompleto != null && $trainer->direccion != null &&
+            $trainer->numCuenta != null && $trainer->numTelefono != null &&
+            $trainer->turno != null && $trainer->especialidad != null){
+
+                $trainer->save();
+                return view("popup",['name'=>$trainer,'accion'=>'insertado']);
+            }
+            else{
+                return view("insertTrainer",["trainers"=>$trainer]);
+            }
+
+        
     }
 
 
@@ -91,11 +102,6 @@ class TrainerController extends Controller
     }
 
 
-
-    public function redirectMiCuenta(){
-
-        return view('vistaAdmin');
-    }
 
 
     
