@@ -12,12 +12,13 @@
 
 <table class="table table-striped">
 <tr>
-    <th>Nombre</th><th>Veces utilizada</th>
+    <th>Nombre</th><th>Veces utilizada</th><th>Sala en la que está</th>
 </tr>
 
 @foreach ( $machines as $machine)
 <tr>
 <td>{{$machine->nombre}}</td><td>{{$machine->vecesUtilizada}}</td>
+<td><button>{{$machine->room->nombre}}</button></td>
 </tr>
 @endforeach
 </table>
