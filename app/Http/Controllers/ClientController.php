@@ -73,8 +73,48 @@ class ClientController extends Controller
             }else{
                 return redirect('addCliente');
             }
-        
-        
     }
+
+    public function register(){
+        return view('vistaRegistrarUsuario');
+    }
+
+
+    //En esta funcion, es la que los usuarios se registran ellos solos.
+    public function addUser(Request $request){
+        $c = new Client;
+        $carbon = new Carbon();
+        $t = Client::max('taquillaActual');
+        
+        $t=$t+1;
+        $date = Carbon::now();
+        $date = $date->format('Y-m-d');
+
+        $newDate = date("d-m-Y", strtotime($date));
+
+        $c->nombreCompleto = $request->input('nombre');
+        $c->taquillaActual = $t;
+        $c->tiempoEmpleado = 0;
+        $c->direccion = $request->input('direccion');
+        $c->numCuenta = $request->input('numCuenta');
+        $cuentaAux = $request->input('numCuenta');
+        $c->numTelefono = $request->input('telefono');
+        $c->fechaAlta = $date;
+        $c->created_at = $carbon->now();
+        $c->updated_at = $carbon->now();
+    
+        $c->save();
+
+        $existencia = Client::find($c->id);
+
+        if($cuentaAux == $existencia->numCuenta){
+            $valido = 1;
+            return view('vistaUsuarioRegistrado',["valido"=>$valido]);
+        }else{
+            $valido = 0;
+            return view('vistaUsuarioRegistrado',["valido"=>$valido]);
+        }
+    }
+
     
 }
