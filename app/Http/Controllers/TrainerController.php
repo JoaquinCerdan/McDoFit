@@ -102,9 +102,15 @@ class TrainerController extends Controller
     }
 
 
+    public function viewOneTrainer($id){
 
+       
 
-    
+        $trainer = Trainer::findOrFail($id);
+        
 
+        return view("vistaTrainer",["trainer"=>$trainer]);
+
+    }
 
 }

@@ -27,4 +27,13 @@ class RoomController extends Controller
 
         return redirect('salasAdmin');
     }
+
+
+    public function viewOneRoom($room_id){
+        $room = Room::findOrFail($room_id);
+        
+
+        return view("vistaRoom",["room"=>$room]);
+    }
+
 }

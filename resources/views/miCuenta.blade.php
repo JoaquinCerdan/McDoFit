@@ -1,6 +1,22 @@
 @extends('master')
 
 @section("content")
-<td><a href="/menuAdmin">Acceder como administrador</a></td>
-<br><th><a href=/>Volver</a></th></br>
+<div class="d-flex justify-content-center">
+<td><a href="/menuAdmin"><button>Acceder como administrador</button></a></td>
+</div>
+<br>
+<div class="d-flex justify-content-center">
+<td><a href="{{ action('ClientController@register') }}"><button>Registrarme como usuario</button></a></td>
+</div>
+<br>
+<div class="d-flex justify-content-center">
+<td><a><button>Acceder como usuario</button></a></td>
+</div>
+<br>
+<div class="d-flex justify-content-center">
+<br><th><a href=/><button>Volver</button></a></th></br>
+</div>
+
+
+
 @endsection

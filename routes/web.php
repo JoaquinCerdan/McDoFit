@@ -77,3 +77,14 @@ Route::get('salasAdmin','RoomController@listRooms');
 Route::get('deleteRoom/{id}','RoomController@deleteRoom');
 Route::post('deleteRoom/{id}','RoomController@deleteRoom');
 
+Route::get('viewOneRoom/{id}','RoomController@viewOneRoom');
+Route::post('viewOneRoom/{id}','RoomController@viewOneRoom');
+
+Route::get('viewOneTrainer/{id}','TrainerController@viewOneTrainer');
+Route::post('viewOneTrainer/{id}','TrainerController@viewOneTrainer');
+
+Route::get('vistaRegistrarUsuario','ClientController@register');
+
+
+Route::get('vistaUsuarioRegistrado','ClientController@addUser');
+Route::post('vistaUsuarioRegistrado','ClientController@addUser');
