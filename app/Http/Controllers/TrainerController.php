@@ -34,6 +34,16 @@ class TrainerController extends Controller
     }
 
     public function insertTrainer(Request $request){
+
+        $request->validate([
+            'nombreCompleto'=>'required',
+            'direccion' => 'required',
+            'numTelefono'=>'required',
+            'numCuenta'=>'required',
+            'especialidad'=>'required',
+            'turno'=>'required'
+        ]);
+
         $trainer = new Trainer;
         $trainer->nombreCompleto = $request->input('nombreCompleto');
         $trainer->direccion = $request->input('direccion');

@@ -88,3 +88,6 @@ Route::get('vistaRegistrarUsuario','ClientController@register');
 
 Route::get('vistaUsuarioRegistrado','ClientController@addUser');
 Route::post('vistaUsuarioRegistrado','ClientController@addUser');
+
+
+Route::get('sobreNosotros','TrainingController@sobreNosotros');

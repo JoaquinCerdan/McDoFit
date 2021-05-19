@@ -25,6 +25,16 @@
         {{  $trainings->links() }}
 @endif
 
-<a href="{{ action('TrainingController@addTraining') }}"><button type="button" class="btn btn-primary btn-lg">Añadir nueva clase</button></a>
-<th><a href=/menuAdmin>Volver</a></th>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <a href="{{ action('TrainingController@addTraining') }}"><button type="button" class="btn btn-primary btn-lg">Añadir nueva clase</button></a>
+    </div>
+    <div class="col">
+    <a href=/menuAdmin><button type="button" class="btn btn-primary btn-lg">Volver</button></a>
+    </div>
+  </div>
+</div>
+
 @endsection

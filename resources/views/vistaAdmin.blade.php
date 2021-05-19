@@ -4,10 +4,22 @@
 
 @section("content")
 
-<a href="{{ action('TrainingController@listTrainingsAdmin') }}"><button>Administrar clases</button></a>
-<a href="{{ action('MachineController@listMachinesAdmin') }}"><button>Administrar máquinas</button></a>
-<a href="{{ action('ClientController@listClients') }}"><button>Administrar usuarios</button></a>
-<a href="{{ action('TrainerController@listTrainers') }}"><button>Administrar entrenadores</button></a>
-<a href="{{ action('RoomController@listRooms') }}"><button>Administrar salas</button></a>
-<br><th><a href=/MiCuenta>Volver</a></th></br>
+
+<br>
+<a href="{{ action('TrainingController@listTrainingsAdmin') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Administrar clases</button></a>
+<br>
+<br><a href="{{ action('MachineController@listMachinesAdmin') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Administrar máquinas</button></a>
+
+<br>
+<br><a href="{{ action('ClientController@listClients') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Administrar usuarios</button></a>
+
+<br>
+<br><th><a href="{{ action('TrainerController@listTrainers') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Administrar entrenadores</button></a>
+<br>
+
+<br><a href="{{ action('RoomController@listRooms') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Administrar salas</button></a>
+
+<br><br>
+<br><th><br><a href=/MiCuenta><button type="button" class="btn btn-secondary btn-lg btn-block">Volver</button></a></br></br>
+
 @endsection

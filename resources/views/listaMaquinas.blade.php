@@ -18,7 +18,7 @@
 @foreach ( $machines as $machine)
 <tr>
 <td>{{$machine->nombre}}</td><td>{{$machine->vecesUtilizada}}</td>
-<td><a href="{{ action('RoomController@viewOneRoom',[$machine->id])}}"><button>{{$machine->room->nombre}}</button></a></td>
+<td><a href="{{ action('RoomController@viewOneRoom',[$machine->id])}}"><button class="btn btn-primary">{{$machine->room->nombre}}</button></a></td>
 
 </tr>
 @endforeach

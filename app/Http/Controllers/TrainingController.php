@@ -124,4 +124,10 @@ class TrainingController extends Controller
         //return view("listaTrainingsAdmin",["trainings"=>$training]);
         return redirect('listTrainingsAdmin');
     }
+
+    //esta funcion es unica y exclusivamente para que me devuelva la vista de "sobre nosotros"
+    public function sobreNosotros(){
+
+        return view('sobreNosotros');
+    }
 }

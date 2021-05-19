@@ -25,7 +25,14 @@
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+<!------ Include the above in your HEAD tag ---------->
 
     <style>
       .bd-placeholder-img {
@@ -84,6 +91,7 @@
       <li></li>
       <li><a href="{{ action('MachineController@listMachines') }}" class="nav-link px-2 link-dark">MAQUINAS</a></li>
       <li><a href="{{ action('TrainingController@listTrainings') }}" class="nav-link px-2 link-dark">CLASES</a></li>
+      <li><a href="{{ action('TrainingController@sobreNosotros')  }}" class="nav-link px-2 link-dark">SOBRE NOSOTROS</a></li>
       <li><a href="#" class="nav-link px-2 link-dark"></a></li>
     </ul>
     <div class="col-md-3 text-end">

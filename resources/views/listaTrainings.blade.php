@@ -12,7 +12,7 @@
 @foreach ( $trainings as $training)
 <tr>
 <td>{{$training->nombre}}</td><td>{{$training->nivel}}</td>
-<td><a href="{{ action('RoomController@viewOneRoom',[$training->room_id])}}"><button>{{$training->room->nombre}}</button></a></td><td><a href="{{ action('TrainerController@viewOneTrainer',[$training->trainer_id])}}"><button>{{$training->trainer->nombreCompleto}}</button></a></td>
+<td><a href="{{ action('RoomController@viewOneRoom',[$training->room_id])}}"><button  class="btn btn-primary">{{$training->room->nombre}}</button></a></td><td><a href="{{ action('TrainerController@viewOneTrainer',[$training->trainer_id])}}"><button  class="btn btn-primary" >{{$training->trainer->nombreCompleto}}</button></a></td>
 </tr>
 @endforeach
 </table>

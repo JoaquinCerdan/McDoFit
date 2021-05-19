@@ -18,7 +18,7 @@
 @foreach ( $machines as $machine)
 <tr>
     <td>{{$machine->nombre}}</td><td>{{$machine->vecesUtilizada}}</td>
-    <td><a href="{{ action('MachineController@deleteMachine',[$machine->id]) }}">Borrar</a></td>
+    <td><a href="{{ action('MachineController@deleteMachine',[$machine->id]) }}"><button  class="btn btn-primary" > Borrar</button></a></td>
 </tr>
 @endforeach
 </table>
