@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RoomsTableSeeder::class);
         $this->call(RentalmaterialTableSeeder::class);
         $this->call(StaticmaterialTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
     }
 }
