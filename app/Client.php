@@ -21,4 +21,8 @@ class Client extends Model
     public function rentalmaterials(){
         return $this->hasMany("App\Rentalmaterial");
     }
+
+    public function user(){
+        return $this->hasOne("App\User");
+    }
 }

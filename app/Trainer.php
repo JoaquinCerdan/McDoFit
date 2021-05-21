@@ -13,4 +13,8 @@ class Trainer extends Model
     public function trainings(){
         return $this->hasMany("App\Training");
     }
+
+    public function user(){
+        return $this->hasOne("App\User");
+    }
 }
