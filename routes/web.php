@@ -91,3 +91,6 @@ Route::post('vistaUsuarioRegistrado','ClientController@addUser');
 
 
 Route::get('sobreNosotros','TrainingController@sobreNosotros');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
