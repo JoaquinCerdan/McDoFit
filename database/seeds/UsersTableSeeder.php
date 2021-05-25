@@ -39,17 +39,17 @@ class UsersTableSeeder extends Seeder
 
         $u0 = new User();
         $u0->email = "unemail@gmail.com";
-        $u0->password = "01012000";
+        $u0->password = Hash::make("01012000");
         $u0->role = "Client";
 
         $u1 = new User();
         $u1->email = "dosemail@gmail.com";
-        $u1->password = "01012000";
+        $u1->password = Hash::make("01012000");
         $u1->role = "Trainer";
 
         $u2 = new User();
         $u2->email = "tremail@gmail.com";
-        $u2->password = "01012000";
+        $u2->password = Hash::make("01012000");
         $u2->role = "Administrator";
 
         $c10->user()->save($u0);
