@@ -3,7 +3,7 @@
 @section("content")
 
 
-<h1>Información de la sala:</h1>
+<h1>Información del entrenador:</h1>
 
 
 El entrenador es : {{$trainer->nombreCompleto}}
