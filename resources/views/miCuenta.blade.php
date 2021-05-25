@@ -9,10 +9,23 @@
 </div>
 <br>
 <br>
+<!--
 <div class="d-flex justify-content-center">
 <td><a href=""><button  class="btn btn-primary">Cerrar sesión</button></a></td>
 </div>
 <br>
+-->
+
+<td><a class="d-flex justify-content-center" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a></td>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        
 @endauth
 
 @guest
