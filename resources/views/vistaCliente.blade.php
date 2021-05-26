@@ -7,12 +7,12 @@
 
 <div class="container">
 
-<h1>Información del Entrenador:</h1>
+<h1>Información del Cliente:</h1>
 <div class="panel panel-primary">
 <div class="panel-heading">
 <h3 class="panel-title">Nombre y apellidos</h3>
 </div><div class="panel-body">
-{{$trainer->nombreCompleto}}
+{{$cliente->nombreCompleto}}
 </div>
 </div>
 <br>
@@ -20,7 +20,7 @@
 <div class="panel-heading">
 <h3 class="panel-title">Direccion</h3>
 </div><div class="panel-body">
-{{$trainer->direccion}}
+{{$cliente->direccion}}
 </div>
 </div>
 <br>
@@ -29,25 +29,15 @@
 <div class="panel-heading">
 <h3 class="panel-title">Telefono</h3>
 </div><div class="panel-body">
-{{$trainer->numTelefono}}
-</div>
-</div>
-
-
-
-<div class="panel panel-primary">
-<div class="panel-heading">
-<h3 class="panel-title">Turno</h3>
-</div><div class="panel-body">
-{{$trainer->turno}}
+{{$cliente->numTelefono}}
 </div>
 </div>
 
 <div class="panel panel-primary">
 <div class="panel-heading">
-<h3 class="panel-title">Especialidad</h3>
+<h3 class="panel-title">Taquilla Actual</h3>
 </div><div class="panel-body">
-{{$trainer->especialidad}}
+{{$cliente->taquillaActual}}
 </div>
 </div>
 
@@ -57,18 +47,12 @@
 <div class="panel-heading">
 <h3 class="panel-title">Número de cuenta</h3>
 </div><div class="panel-body">
-{{$trainer->numCuenta}}
+{{$cliente->numCuenta}}
 </div>
 </div>
-<br><a href="{{ action('TrainerController@listTrainers') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
 @endif
 @endauth
-
-@auth
-@if(Auth::user()->role == 'Trainer')
-<br><a href="{{ action('MiCuentaController@menuCuenta') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
-@endif
-@endauth
+<br><a href="{{ action('ClientController@listClients') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
 
 </div>
 

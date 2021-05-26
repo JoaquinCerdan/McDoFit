@@ -25,12 +25,24 @@
 
 
 @auth
+@if(Auth::user()->role == 'Trainer')
 <br>
 <div class="d-flex justify-content-center">
-<td><a href=""><button  class="btn btn-primary">Modificar perfil</button></a></td>
+<td><a href="{{ action('TrainerController@viewOneTrainer', [Auth::user()->trainer->id])}}"><button  class="btn btn-primary">Ver mi perfil de Entrenador</button></a></td>
 </div>
 <br>
 <br>
+@endif
+
+@if(Auth::user()->role == 'Client')
+<br>
+<div class="d-flex justify-content-center">
+<td><a href="{{ action('ClientController@viewOneClient', [Auth::user()->client->id])}}"><button  class="btn btn-primary">Ver mi perfil de Cliente</button></a></td>
+</div>
+<br>
+<br>
+@endif
+
 
 <td><a class="d-flex justify-content-center" href="{{ route('logout') }}"
 onclick="event.preventDefault();

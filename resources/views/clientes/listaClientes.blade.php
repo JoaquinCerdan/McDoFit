@@ -7,12 +7,15 @@
 <table class="table table-striped">
 <tr>
     <th><a href="{{ action('ClientController@listClients',['sort'=>'nombreCompleto'])}}">Nombre</a></th>
+    <th></th>
     <th><a href="{{ action('ClientController@listClients',['sort'=>'numTelefono'])}}">Número de Telefono</a></th>
+    <th></th>
+
 </tr></table>
 
 <table class="table table-striped">
     <tr>
-        <th>Nombre Completo</th><th>Número de Telefono</th>
+        <th>Nombre Completo</th><th>Número de Telefono</th><th></th><th></th>
     </tr>
 </table>
 <table class="table table-striped">
@@ -21,6 +24,7 @@
             <td>{{$client->nombreCompleto}}</td><td>{{$client->numTelefono}}</td>
             <th><a href="{{ action('ClientController@formularioModificarClients', [$client->id])}}">Modificar</a></th>
             <th><a href="{{ action('ClientController@borrarClients', [$client->id])}}">Borrar</a></th>
+            <th><a href="{{ action('ClientController@viewOneClient', [$client->id])}}">Ver</a></th>
         </tr>
     @endforeach
 </table>
