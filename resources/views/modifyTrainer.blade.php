@@ -40,5 +40,6 @@
 
 </form>
 
+<th><a href=/menuAdmin>Volver</a></th>
 
 @endsection
