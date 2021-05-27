@@ -116,5 +116,14 @@ class ClientController extends Controller
         }
     }
 
+    public function viewOneClient($id){
+
+        $cliente = Client::findOrFail($id);
+
+        return view("vistaCliente",["cliente"=>$cliente]);
+
+
+    }
+
     
 }

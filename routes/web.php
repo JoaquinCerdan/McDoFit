@@ -94,3 +94,7 @@ Route::get('sobreNosotros','TrainingController@sobreNosotros');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//para ver un cliente solo
+Route::get('viewOneClient/{id}','ClientController@viewOneClient');
+Route::post('viewOneClient/{id}','ClientController@viewOneClient');
