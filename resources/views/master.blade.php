@@ -36,7 +36,6 @@
 
     <style>
 
-
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -92,7 +91,7 @@
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
       <title>@yield("title")</title>
-      <li></li>
+      <li><a href="{{ action('MaterialController@listRentalMaterial') }}" class="nav-link px-2 link-dark">MATERIAL</a></li>
       <li><a href="{{ action('MachineController@listMachines') }}" class="nav-link px-2 link-dark">MAQUINAS</a></li>
       <li><a href="{{ action('TrainingController@listTrainings') }}" class="nav-link px-2 link-dark">CLASES</a></li>
       <li><a href="{{ action('TrainingController@sobreNosotros')  }}" class="nav-link px-2 link-dark">SOBRE NOSOTROS</a></li>
@@ -109,13 +108,6 @@
 </head>
 <body>
 @yield('content')
-
-    
-
-
-
-
-
 
   </body>
 </html>
