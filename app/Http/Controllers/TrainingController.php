@@ -10,16 +10,11 @@ Use \Carbon\Carbon;
 
 class TrainingController extends Controller
 {
-    //
+
     public function listTrainings(Request $request) {
-        if($request->has("sort")){
-            $sort = $request->input("sort") ;
-            $m = Training::orderBy($sort )->paginate(7);
-        }else{
-            $sort = null;
-            $m = Training::paginate(7);
-        }
-        return view("listaTrainings",["trainings"=>$m,'sort'=>$sort]);
+
+        $t = Training::all();
+        return view("listaTrainings",["trainings"=>$t]);
     }
 
     public function listTrainingsAdmin(Request $request) {
@@ -41,13 +36,13 @@ class TrainingController extends Controller
             $sort = null;
             $t = Training::paginate(7);
         }
-        $trainers = Trainer::paginate(7);
+        $trainers = Trainer::all();
         return view("insertTraining",["trainings"=>$t, "trainers"=>$trainers,'sort'=>$sort]);
     }
 
     public function insertTraining(Request $request){
         $training = new Training;
-        $trainer = Trainer::first();
+        $trainer = Trainer::all();
         $room = Room::first();
 
         //$carbon = new Carbon();
@@ -58,7 +53,7 @@ class TrainingController extends Controller
         $training->nivel = $request->input('nivel');
         //$training->created_at = $carbon->now();
         //$training->updated_at = $carbon->now();
-        $training->trainer_id = $trainer->id;
+        $training->trainer_id = $request->input('entrenador');;
         $training->room_id = $room->id;
 
         //$training->save();
@@ -86,7 +81,6 @@ class TrainingController extends Controller
        
         //$carbon = new Carbon();
         $training = Training::findOrFail($id);
-        $aux = $training->trainer_id;
         $aux2 = $training->room_id;
 
         if($request->has('nombre')){
@@ -96,12 +90,12 @@ class TrainingController extends Controller
             $training->duracion = $request->input('duracion');
             $training->nivel = $request->input('nivel');
             //$training->updated_at = $carbon->now();
-            $training->trainer_id = $aux;
+            $training->trainer_id = $request->input('entrenador');
             $training->room_id = $aux2;
             $training->save();
         }
 
-        $trainers = Trainer::paginate(2);
+        $trainers = Trainer::all();
 
         return view('modifyTraining',['training'=>$training, "trainers"=>$trainers, 'accion'=>'insertado']);
         /*

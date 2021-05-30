@@ -34,6 +34,23 @@
 <label for="Nivel">Nivel</label>
 <input type="int" class="form-control" name="nivel" id="nivel" placeholder="">
 </div>
+<div class="form-group">
+    <label for="Entrenador">Entrenador  </label>
+    <select name="entrenador" id = "entrenador">
+        @foreach ( $trainers as $trainer)
+            @if ($trainer->trainer_id == $trainer->id)
+            <option value="{{ $trainer->id }}" selected = "selected">
+                {{ $trainer->nombreCompleto }}
+            </option>
+            @else
+                <option value="{{ $trainer->id }}">
+                    {{ $trainer->nombreCompleto }}
+                </option>
+            @endif
+            
+        @endforeach
+    </select>
+    </div>
 <br>
 <p><input type="submit" value="Crear nueva Clase"><input type="reset" value="Borrar datos"></p>
 
