@@ -18,16 +18,6 @@
 
 <div class="panel panel-primary">
 <div class="panel-heading">
-<h3 class="panel-title">Telefono</h3>
-</div><div class="panel-body">
-{{$trainer->numTelefono}}
-</div>
-</div>
-
-
-
-<div class="panel panel-primary">
-<div class="panel-heading">
 <h3 class="panel-title">Turno</h3>
 </div><div class="panel-body">
 {{$trainer->turno}}
@@ -41,6 +31,22 @@
 {{$trainer->especialidad}}
 </div>
 </div>
+
+@auth
+@if(Auth::user()->role == 'Client')
+<h1>Contacto:</h1>
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Telefono</h3>
+</div><div class="panel-body">
+{{$trainer->numTelefono}}
+</div>
+</div>
+<br><a href="{{ action('TrainingController@listTrainings') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+
+@endif
+@endauth
+
 
 @auth
 @if(Auth::user()->role == 'Administrator')

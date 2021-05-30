@@ -142,7 +142,7 @@ class TrainingController extends Controller
         $carbon = new Carbon();
         $fechaActual = $carbon->toDateString();
 
-        $trainings = Training::where('horario',$fechaActual)->get();
+        $trainings = Training::all();
         //$trainings2 = Training::where('horario',$fechaActual)
 
         foreach ($trainings as $training){
@@ -158,6 +158,6 @@ class TrainingController extends Controller
         }
 
         
-        return view('vistaEstadisticas',["totalEntrenadores"=>$cont,'minutosTotal'=>$minutosTotal]);
+        return view('vistaEstadisticas',["totalEntrenadores"=>$cont,'minutosTotal'=>$minutosTotal,'basico'=>$nivelBasico,'medio'=>$nivelMedio,'avanzado'=>$nivelAvanzado]);
     }
 }

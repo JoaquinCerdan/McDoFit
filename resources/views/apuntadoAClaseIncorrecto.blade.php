@@ -10,4 +10,6 @@
   <p class="mb-0">¡Para reclamaciones, por favor, contacta con nuestro personal!</p>
 </div>
 </div>
+
+<br><a href="{{ action('TrainingController@listTrainings') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
 @endsection
