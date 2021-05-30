@@ -2,6 +2,10 @@
 
 @section("content")
 
+<h3 >Solo puede acceder a esta página si está identificado como Administrador</h3>
+
+@auth
+@if(Auth::user()->role == "Administrator")
 
 <form enctype="multipart/form-data" action="{{action('TrainingController@insertTraining')}}" method="POST">
 @csrf
@@ -53,5 +57,8 @@
 </form>
 
 <th><a href=/listTrainingsAdmin>Volver</a></th>
+
+@endif
+@endauth
 
 @endsection
