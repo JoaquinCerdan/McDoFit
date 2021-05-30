@@ -65,8 +65,12 @@
 @endauth
 
 @auth
-@if(Auth::user()->role == 'Trainer')
+@if(Auth::user()->role == 'Trainer' || Auth::user()->role == 'Administrator')
 <br><a href="{{ action('MiCuentaController@menuCuenta') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+
+<br><a href="{{ action('TrainerController@modifyTrainer',[$trainer->id]) }}"><button type="button" class="btn btn-warning btn-lg btn-block">Modificar</button></a>
+
+
 @endif
 @endauth
 

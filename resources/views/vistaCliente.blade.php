@@ -52,7 +52,18 @@
 </div>
 @endif
 @endauth
-<br><a href="{{ action('ClientController@listClients') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+
+
+@auth
+@if(Auth::user()->role == 'Trainer' || Auth::user()->role == 'Administrator' || Auth::user()->role == 'Client')
+<br><a href="{{ action('MiCuentaController@menuCuenta') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+
+<br><a href="{{ action('ClientController@formularioModificarClients', [$cliente->id])}}"><button type="button" class="btn btn-warning btn-lg btn-block">Modificar</button></a>
+
+
+@endif
+@endauth
+
 
 </div>
 

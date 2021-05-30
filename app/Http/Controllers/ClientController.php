@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Client;
+use App\Training;
 Use \Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
@@ -39,7 +41,7 @@ class ClientController extends Controller
         $c->updated_at = $carbon->now();
         $c->save();
 
-        return redirect('clientes');
+        return view('clientes.modificarClientes',["client"=>$c]);
     }
 
     public function borrarClients($id){
@@ -123,6 +125,29 @@ class ClientController extends Controller
         return view("vistaCliente",["cliente"=>$cliente]);
 
 
+    }
+
+    public function apuntarseAUnaClase($idClase,$idClient){
+        $carbon = new Carbon();
+        $meter = true;
+        //para consultar
+        //$resultado = DB::table('client_training')->where('client_id',$idClient);
+        $resultado = DB::table('client_training')->get();
+
+        foreach($resultado as $r){
+            if($r->training_id == $idClase && $r->client_id == $idClient){
+                $meter = false;
+            }
+
+        }
+
+        if($meter == true){
+            //para insertar
+            DB::table('client_training')->insert(['client_id'=>$idClient,'training_id'=>$idClase]);
+            return view("apuntadoAClaseCorrecto");
+        }else{
+            return view("apuntadoAClaseIncorrecto");
+        }
     }
 
     
