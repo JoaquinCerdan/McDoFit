@@ -18,8 +18,10 @@
 
 <br><a href="{{ action('RoomController@listRooms') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Administrar salas</button></a>
 
+<br><a href="{{ action('TrainingController@estadisticas') }}"><button type="button" class="btn btn-info btn-lg btn-block">Ver estadísticas</button></a>
+
 <br><br>
-<br><th><br><a href=/MiCuenta><button type="button" class="btn btn-secondary btn-lg btn-block">Volver</button></a></br></br>
+<br><th><br><a href=/><button type="button" class="btn btn-secondary btn-lg btn-block">Volver</button></a></br></br>
 @endif
 @endauth
 

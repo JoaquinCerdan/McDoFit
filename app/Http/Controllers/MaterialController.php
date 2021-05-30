@@ -21,8 +21,8 @@ class MaterialController extends Controller
         $material = new Rentalmaterial();
         $material = Rentalmaterial::findOrFail($idMaterial);
         $cliente = Client::findOrFail($idCliente);
-        $cliente->rentalmaterials()->savemany($material);
-        return view("home");
+        $cliente->rentalmaterials()->savemany([$material]);
+        return view("objetoAlquilado");
     }
 
 }

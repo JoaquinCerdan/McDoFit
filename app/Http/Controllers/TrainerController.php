@@ -70,7 +70,22 @@ class TrainerController extends Controller
 
     public function modifyTrainer(Request $request,$id){
 
+
+        
+
             $trainer = Trainer::findOrFail($id);
+            /*
+            $request->validate([
+                'nombreCompleto'=>'required',
+                'direccion' => 'required',
+                'numTelefono'=>'required',
+                'numCuenta'=>'required',
+                'especialidad'=>'required',
+                'turno'=>'required'
+            ]);*/
+
+
+            
             if($request->has('nombreCompleto')){
                 $trainer->nombreCompleto = $request->input('nombreCompleto');
                 $trainer->direccion = $request->input('direccion');

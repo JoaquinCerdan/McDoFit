@@ -17,6 +17,7 @@
     <input type = "submit"/>
 </form>
 -->
+<div class="content">
 <form enctype="multipart/form-data" action="{{action('ClientController@modificarClients', [$client->id]) }}" method="POST">
 @csrf
 <div class="form-group">
@@ -62,8 +63,8 @@
 
 </form>
 
-<th><a href=/MiCuenta>Volver</a></th>
+<th><a href="{{ action('ClientController@viewOneClient', [Auth::user()->client->id])}}">Volver</a></th>
 
-
+<div>
 @endsection
 

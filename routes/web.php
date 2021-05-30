@@ -99,8 +99,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('viewOneClient/{id}','ClientController@viewOneClient');
 Route::post('viewOneClient/{id}','ClientController@viewOneClient');
 
+
 // RentalMaterial
 
 Route::get('materiales','MaterialController@listRentalMaterial');
-Route::get('AlquilarMateriales','MaterialController@alquilarMaterial');
-Route::post('AlquilarMateriales','MaterialController@alquilarMaterial');
+Route::get('AlquilarMateriales/{idCliente}/{idMaterial}','MaterialController@alquilarMaterial');
+Route::post('AlquilarMateriales/{idCliente}/{idMaterial}','MaterialController@alquilarMaterial');
+
+//para apuntarse a una clase.
+Route::get('apuntarseAUnaClase/{idClase}/{idClient}','ClientController@apuntarseAUnaClase');
+Route::post('apuntarseAUnaClase/{idClase}/{idClient}','ClientController@apuntarseAUnaClase');
+
+
+//para ver estadisticas
+Route::get('estadisticas','TrainingController@estadisticas');
+Route::post('estadisticas','TrainingController@estadisticas');
