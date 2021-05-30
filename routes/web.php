@@ -98,3 +98,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 //para ver un cliente solo
 Route::get('viewOneClient/{id}','ClientController@viewOneClient');
 Route::post('viewOneClient/{id}','ClientController@viewOneClient');
+
+//para apuntarse a una clase.
+Route::get('apuntarseAUnaClase/{idClase}/{idClient}','ClientController@apuntarseAUnaClase');
+Route::post('apuntarseAUnaClase/{idClase}/{idClient}','ClientController@apuntarseAUnaClase');
+
+
+//para ver estadisticas
+Route::get('estadisticas','TrainingController@estadisticas');
+Route::post('estadisticas','TrainingController@estadisticas');

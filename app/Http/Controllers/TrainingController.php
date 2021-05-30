@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Training;
 use App\Trainer;
 use App\Room;
-//Use \Carbon\Carbon;
+Use \Carbon\Carbon;
 
 class TrainingController extends Controller
 {
@@ -129,5 +129,35 @@ class TrainingController extends Controller
     public function sobreNosotros(){
 
         return view('sobreNosotros');
+    }
+
+
+    //esta funcion es unica y exclusivamente hacer las estadisticas
+    public function estadisticas(){
+        $minutosTotal = 0;
+        $cont = 0;
+        $nivelMedio = 0;
+        $nivelAvanzado = 0;
+        $nivelBasico = 0;
+        $carbon = new Carbon();
+        $fechaActual = $carbon->toDateString();
+
+        $trainings = Training::where('horario',$fechaActual)->get();
+        //$trainings2 = Training::where('horario',$fechaActual)
+
+        foreach ($trainings as $training){
+            $cont = $cont + 1;
+            $minutosTotal = $minutosTotal + $training->duracion;
+            if($training->nivel == "Medio"){
+                $nivelMedio = $nivelMedio+1;
+            }else if($training->nivel == "Avanzado"){
+                $nivelAvanzado = $nivelAvanzado+1;
+            }else{
+                $nivelBasico = $nivelBasico+1;
+            }
+        }
+
+        
+        return view('vistaEstadisticas',["totalEntrenadores"=>$cont,'minutosTotal'=>$minutosTotal]);
     }
 }
