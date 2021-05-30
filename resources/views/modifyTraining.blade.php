@@ -2,6 +2,8 @@
 
 @section("content")
 
+@auth
+@if(Auth::user()->role == "Administrator")
 
 <form enctype="multipart/form-data" action="{{action('TrainingController@modifyTraining',['id'=>$training->id])}}" method="POST">
 @csrf
@@ -52,4 +54,8 @@
 </form>
 
 <th><a href=/menuAdmin>Volver</a></th>
+
+@endif
+@endauth
+
 @endsection

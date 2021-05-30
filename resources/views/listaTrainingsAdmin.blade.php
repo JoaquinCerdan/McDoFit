@@ -4,6 +4,11 @@
 
 @section("content")
 
+<h3 >Solo puede acceder a esta página si está identificado como Administrador</h3>
+
+@auth
+@if(Auth::user()->role == "Administrator")
+
 <table class="table table-striped">
 <tr>
     <th>Nombre</th><th>Nivel</th><th>Modificar</th><th>Borrar</th>
@@ -36,5 +41,8 @@
     </div>
   </div>
 </div>
+
+@endif
+@endauth
 
 @endsection

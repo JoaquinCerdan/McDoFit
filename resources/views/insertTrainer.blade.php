@@ -2,6 +2,11 @@
 
 @section("content")
 
+<h3 >Solo puede acceder a esta página si está identificado como Administrador</h3>
+
+@auth
+@if(Auth::user()->role == "Administrator")
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -109,4 +114,8 @@
 </div>
 
 <th><a href="/trainersAdmin">Volver</a></th>
+
+@endif
+@endauth
+
 @endsection

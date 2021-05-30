@@ -60,17 +60,29 @@
 </div>
 </div>
 <br>
-<br><a href="{{ action('TrainerController@listTrainers') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+
+@endif
+@endauth
+
+
+@auth
+@if(Auth::user()->role == "Trainer")
+
+<br><a href="{{ action('TrainerController@modifyTrainer',[Auth::user()->trainer->id]) }}"><button type="button" class="btn btn-warning btn-lg btn-block">Modificar</button></a>
+
 @endif
 @endauth
 
 @auth
-@if(Auth::user()->role == 'Trainer' || Auth::user()->role == 'Administrator')
-<br><a href="{{ action('MiCuentaController@menuCuenta') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
-
+@if(Auth::user()->role == "Administrator")
 <br><a href="{{ action('TrainerController@modifyTrainer',[$trainer->id]) }}"><button type="button" class="btn btn-warning btn-lg btn-block">Modificar</button></a>
+<br><a href="{{ action('MiCuentaController@menuCuenta') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+@endif
+@endauth
 
-
+@auth
+@if(Auth::user()->role == "Trainer")
+<br><a href="{{ action('MiCuentaController@menuCuenta') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
 @endif
 @endauth
 

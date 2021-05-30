@@ -22,7 +22,7 @@
 
 @auth
 @if(Auth::user()->role == 'Client')
-<td><a href="{{ action('ClientController@apuntarseAUnaClase',[$training->id,Auth::user()->client->id])}}"><button>Apuntarse</button></a></td>
+<td><a href="{{ action('ClientController@apuntarseAUnaClase',[$training->id,Auth::user()->client->id])}}"><button class="btn btn-primary">Apuntarse</button></a></td>
 @endif
 @endauth
 

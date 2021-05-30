@@ -2,6 +2,8 @@
 
 @section("content")
 
+@auth
+@if(Auth::user()->role != "Client")
 
 <form enctype="multipart/form-data" action="{{action('TrainerController@modifyTrainer',['id'=>$trainer->id])}}" method="POST">
 @csrf
@@ -96,6 +98,9 @@
 @auth
 @if(Auth::user()->role == 'Trainer')
 <th><a href="{{ action('TrainerController@viewOneTrainer', [Auth::user()->trainer->id])}}">Volver</a></th>
+@endif
+@endauth
+
 @endif
 @endauth
 
