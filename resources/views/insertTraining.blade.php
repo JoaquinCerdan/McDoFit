@@ -2,10 +2,6 @@
 
 @section("content")
 
-<h3 >Solo puede acceder a esta página si está identificado como Administrador</h3>
-
-@auth
-@if(Auth::user()->role == "Administrator")
 
 <form enctype="multipart/form-data" action="{{action('TrainingController@insertTraining')}}" method="POST">
 @csrf
@@ -34,14 +30,28 @@
 <label for="Nivel">Nivel</label>
 <input type="int" class="form-control" name="nivel" id="nivel" placeholder="">
 </div>
+<div class="form-group">
+    <label for="Entrenador">Entrenador  </label>
+    <select name="entrenador" id = "entrenador">
+        @foreach ( $trainers as $trainer)
+            @if ($trainer->trainer_id == $trainer->id)
+            <option value="{{ $trainer->id }}" selected = "selected">
+                {{ $trainer->nombreCompleto }}
+            </option>
+            @else
+                <option value="{{ $trainer->id }}">
+                    {{ $trainer->nombreCompleto }}
+                </option>
+            @endif
+            
+        @endforeach
+    </select>
+    </div>
 <br>
 <p><input type="submit" value="Crear nueva Clase"><input type="reset" value="Borrar datos"></p>
 
 </form>
 
 <th><a href=/listTrainingsAdmin>Volver</a></th>
-
-@endif
-@endauth
 
 @endsection
