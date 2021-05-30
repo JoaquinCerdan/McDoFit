@@ -35,20 +35,43 @@ class RentalmaterialTableSeeder extends Seeder
 
         $rm1 = new Rentalmaterial();
         $rm1->disponible = true;
-        $rm1->nombre = "Comba1";
+        $rm1->nombre = "Comba nº1";
+        $rm1->save();
 
         $rm2 = new Rentalmaterial();
         $rm2->disponible = true;
-        $rm2->nombre = "Comba2";
+        $rm2->nombre = "Comba nº2";
+        $rm2->save();
 
         $rm3 = new Rentalmaterial();
         $rm3->disponible = true;
-        $rm3->nombre = "Comba3";
+        $rm3->nombre = "Comba nº3";
+        $rm3->save();
 
         $rm4 = new Rentalmaterial();
         $rm4->disponible = true;
-        $rm4->nombre = "Comba4";
+        $rm4->nombre = "Comba nº4";
         $rm4->save();
+
+        $rm5 = new Rentalmaterial();
+        $rm5->disponible = true;
+        $rm5->nombre = "mancuerna nº1";
+        $rm5->save();
+
+        $rm6 = new Rentalmaterial();
+        $rm6->disponible = true;
+        $rm6->nombre = "mancuerna nº2";
+        $rm6->save();
+
+        $rm7 = new Rentalmaterial();
+        $rm7->disponible = true;
+        $rm7->nombre = "mancuerna nº3";
+        $rm7->save();
+
+        $rm8 = new Rentalmaterial();
+        $rm8->disponible = true;
+        $rm8->nombre = "mancuerna nº4";
+        $rm8->save();
 
         $c8->rentalmaterials()->saveMany([$rm1, $rm2, $rm3]); 
     }
