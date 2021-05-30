@@ -15,15 +15,6 @@
 {{$trainer->nombreCompleto}}
 </div>
 </div>
-<br>
-<div class="panel panel-primary">
-<div class="panel-heading">
-<h3 class="panel-title">Direccion</h3>
-</div><div class="panel-body">
-{{$trainer->direccion}}
-</div>
-</div>
-<br>
 
 <div class="panel panel-primary">
 <div class="panel-heading">
@@ -66,17 +57,44 @@
 {{$trainer->numCuenta}}
 </div>
 </div>
-<br><a href="{{ action('TrainerController@listTrainers') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+<br>
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h3 class="panel-title">Direccion</h3>
+</div><div class="panel-body">
+{{$trainer->direccion}}
+</div>
+</div>
+<br>
+
+@endif
+@endauth
+
+
+@auth
+@if(Auth::user()->role == "Trainer")
+
+<br><a href="{{ action('TrainerController@modifyTrainer',[Auth::user()->trainer->id]) }}"><button type="button" class="btn btn-warning btn-lg btn-block">Modificar</button></a>
+
 @endif
 @endauth
 
 @auth
-@if(Auth::user()->role == 'Trainer' || Auth::user()->role == 'Administrator')
-<br><a href="{{ action('MiCuentaController@menuCuenta') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
-
+@if(Auth::user()->role == "Administrator")
 <br><a href="{{ action('TrainerController@modifyTrainer',[$trainer->id]) }}"><button type="button" class="btn btn-warning btn-lg btn-block">Modificar</button></a>
+<br><a href="{{ action('MiCuentaController@menuCuenta') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+@endif
+@endauth
 
+@auth
+@if(Auth::user()->role == "Trainer")
+<br><a href="{{ action('MiCuentaController@menuCuenta') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+@endif
+@endauth
 
+@auth
+@if(Auth::user()->role == "Client")
+<br><a href="{{ action('TrainingController@listTrainings') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
 @endif
 @endauth
 

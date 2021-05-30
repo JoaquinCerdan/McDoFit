@@ -8,9 +8,8 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="aboutus">
                         <h2 class="aboutus-title">Sobre Nosotros</h2>
-                        <p class="aboutus-text">Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in.</p>
-                        <p class="aboutus-text">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem</p>
-                        <a class="aboutus-more" href="#">read more</a>
+                        <p class="aboutus-text">McDoFit es el mejor gimnasio que tienes a tu disposición. ¿Por qué? Te estarás preguntando…</p>
+                        <p class="aboutus-text">No solo somos la mejor opción calidad-precio, teniendo en cuenta todas las instalaciones, máquinas y materiales de los que disponemos, sino que también contamos con una tecnología de última generación para el manejo del gimnasio y la comodidad del usuario. Ven a recepción y pide tu prueba de una semana completamente gratuita e intégrate en el fenómeno McDoFit más fácilmente.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
@@ -26,8 +25,8 @@
                                     <span class="glyphicon glyphicon-cog icon"></span>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Work with heart</h4>
-                                    <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in.</p>
+                                    <h4>TECNOLOGÍA</h4>
+                                    <p>En McDoFit nos renovamos constantemente en el aspecto tecnológico. Eso hace que nuestro gimnasio y nuestra web sea mejor mañana que hoy.</p>
                                 </div>
                             </div>
                         </div>
@@ -37,8 +36,8 @@
                                     <span class="glyphicon glyphicon-cog icon"></span>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Reliable services</h4>
-                                    <p>Donec vitae sapien ut libero venenatis faucibu. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt</p>
+                                    <h4>PROFESIONALIDAD</h4>
+                                    <p>Disponemos de un amplio plantel de cualidades que deben tener nuestros entrenadores, entre ellas está la profesionalidad y la cercanía con el cliente.</p>
                                 </div>
                             </div>
                         </div>
@@ -48,8 +47,8 @@
                                     <span class="glyphicon glyphicon-cog icon"></span>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Great support</h4>
-                                    <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in.</p>
+                                    <h4>INSTALACIONES</h4>
+                                    <p>No solo contamos con las instalaciones más avanzadas tecnológicamente de la comarca, sino que también de un cuidado exquisito de éstas.</p>
                                 </div>
                             </div>
                         </div>

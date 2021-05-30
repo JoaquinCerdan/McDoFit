@@ -3,6 +3,12 @@
 @section("title","Listado de Máquinas")
 
 @section("content")
+
+<h3 >Solo puede acceder a esta página si está identificado como Administrador</h3>
+
+@auth
+@if(Auth::user()->role == "Administrator")
+
 <h1>Ordenar por:</h1><br>
 <table class="table table-striped">
 <tr>
@@ -31,5 +37,8 @@
 @endif
 
 <th><a href=/menuAdmin>Volver</a></th>
+
+@endif
+@endauth
 
 @endsection
