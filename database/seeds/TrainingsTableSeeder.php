@@ -81,42 +81,42 @@ class TrainingsTableSeeder extends Seeder
         $t6->clients()->saveMany([$c1]); 
 
         $ting0 = new Training();
-        $ting0->horario = date_create('2000-01-01 23:02:00');
+        $ting0->horario = date_create('2021-08-01 18:02:00');
         $ting0->nombre = "Spinning 1";
         $ting0->capacidad = 50;
         $ting0->duracion = 90;
         $ting0->nivel = "Avanzado";
 
         $ting1 = new Training();
-        $ting1->horario = date_create('2000-01-01 17:00:00');
+        $ting1->horario = date_create('2021-08-04 17:00:00');
         $ting1->nombre = "Spinning 2";
         $ting1->capacidad = 20;
         $ting1->duracion = 30;
         $ting1->nivel = "Básico";
 
         $ting2 = new Training();
-        $ting2->horario = date_create('2020-01-12 9:00:00');
+        $ting2->horario = date_create('2021-08-12 9:00:00');
         $ting2->nombre = "Calistenia 1";
         $ting2->capacidad = 25;
         $ting2->duracion = 30;
         $ting2->nivel = "Básico";
 
         $ting3 = new Training();
-        $ting3->horario = date_create('2019-12-01 17:30:00');
+        $ting3->horario = date_create('2021-8-01 17:30:00');
         $ting3->nombre = "Calistenia 2";
         $ting3->capacidad = 15;
         $ting3->duracion = 60;
         $ting3->nivel = "Medio";
 
         $ting4 = new Training();
-        $ting4->horario = date_create('2020-11-12 16:30:00');
+        $ting4->horario = date_create('2021-11-12 16:30:00');
         $ting4->nombre = "Yoga 2";
         $ting4->capacidad = 20;
         $ting4->duracion = 60;
         $ting4->nivel = "Medio";
 
         $ting5 = new Training();
-        $ting5->horario = date_create('2018-01-01 10:00:00');
+        $ting5->horario = date_create('2021-01-01 10:00:00');
         $ting5->nombre = "Calistenia 3";
         $ting5->capacidad = 10;
         $ting5->duracion = 90;
