@@ -13,7 +13,7 @@
 <br>
 <div class="form-group">
 <label for="Horario">Horario</label>
-<input type="date" class="form-control" Value="{{$training->horario}}" name="horario" id="horario" placeholder="">
+<input type="dateTime" class="form-control" Value="{{$training->horario}}" name="horario" id="horario" placeholder="">
 </div>
 <br>
 <div class="form-group">

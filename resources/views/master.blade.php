@@ -35,6 +35,8 @@
 <!------ Include the above in your HEAD tag ---------->
 
     <style>
+
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -42,6 +44,7 @@
         -moz-user-select: none;
         user-select: none;
       }
+
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
@@ -53,8 +56,6 @@
     
     <!-- Custom styles for this template -->
     <link href="headers.css" rel="stylesheet">
-  </head>
-  <body>
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="McDoFit" viewBox="0 0 118 94">
@@ -82,7 +83,10 @@
 
 <div class="container">
   <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">McDofit</a>
+  <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+    <img src="https://i.ibb.co/88ZVrXP/logo-Mc-Do-Fit.png" width="100" height="100">
+  </a>
+    <!-- <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">McDofit</a> -->
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
     </a>
 
@@ -101,11 +105,17 @@
   </header>
 </div>
 
-<div class="b-example-divider"></div>
+
+</head>
+<body>
 @yield('content')
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    
 
-      
+
+
+
+
+
   </body>
 </html>

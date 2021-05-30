@@ -37,5 +37,5 @@
         {{  $trainings->links() }}
 @endif
 <th><a href=/>Volver</a></th>
-
+@include('footer')
 @endsection
