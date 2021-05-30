@@ -1,5 +1,15 @@
 @extends('master')
 
+@auth
+@if(Auth::user()->role != "Administrator")
+
+<h3 >Solo puede acceder a esta página si está identificado como Administrador</h3>
+
+@endif
+@endauth
+
+@auth
+@if(Auth::user()->role == "Administrator")
 
 @section("content")
 <form action="{{action('ClientController@add')}}" method="POST">
@@ -16,3 +26,6 @@
 
 <th><a href="{{ action('ClientController@listClients')}}">Volver</a></th>
 @endsection
+
+@endif
+@endauth

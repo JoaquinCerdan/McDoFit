@@ -6,7 +6,7 @@
     <h4 class="alert-heading">¡Enhorabuena!</h4>
     <p>Has alquilado este material!</p>
     </div>
-    <th><a href=/>Volver</a></th>
+    <th><a href=/materiales>Volver</a></th>
 </div>
 
 @endsection

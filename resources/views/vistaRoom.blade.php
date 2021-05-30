@@ -51,7 +51,7 @@
 </div>
 </div>
 
-<br><a href="{{ action('TrainingController@listTrainings') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+<br><a href=/><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
 
 
 

@@ -2,7 +2,13 @@
 
 @section("content")
 
+@auth
+@if(Auth::user()->role != "Administrator")
+
 <h3 >Solo puede acceder a esta página si está identificado como Administrador</h3>
+
+@endif
+@endauth
 
 @auth
 @if(Auth::user()->role == "Administrator")

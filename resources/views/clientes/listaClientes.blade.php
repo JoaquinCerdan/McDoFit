@@ -3,6 +3,18 @@
 @section("title","Listado de clientes")
 
 @section("content")
+
+@auth
+@if(Auth::user()->role != "Administrator")
+
+<h3 >Solo puede acceder a esta página si está identificado como Administrador</h3>
+
+@endif
+@endauth
+
+@auth
+@if(Auth::user()->role == "Administrator")
+
 <h1>Ordenar por:</h1><br>
 <table class="table table-striped">
 <tr>
@@ -37,6 +49,10 @@
 
 
 <a href="{{ action('ClientController@addCliente') }}"><button type="button" class="btn btn-primary btn-lg">Añadir nuevo usuario</button></a>
-<th><a href=/menuAdmin>Volver</a></th>
+<th><a href=/MiCuenta>Volver</a></th>
+
+@endif
+@endauth
+
 @endsection
 

@@ -29,5 +29,5 @@
 
 
 <a href="{{ action('TrainerController@addTrainer') }}"><button type="button" class="btn btn-primary btn-lg">Añadir nuevo entrenador</button></a>
-<th><a href=/menuAdmin>Volver</a></th>
+<th><a href=/MiCuenta>Volver</a></th>
 @endsection

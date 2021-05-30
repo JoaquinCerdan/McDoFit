@@ -70,7 +70,7 @@
 
 </form>
 
-<th><a href=/menuAdmin>Volver</a></th>
+<th><a href=/MiCuenta>Volver</a></th>
 
 @endif
 @endauth

@@ -4,7 +4,13 @@
 
 @section("content")
 
+@auth
+@if(Auth::user()->role != "Administrator")
+
 <h3 >Solo puede acceder a esta página si está identificado como Administrador</h3>
+
+@endif
+@endauth
 
 @auth
 @if(Auth::user()->role == "Administrator")
@@ -37,7 +43,7 @@
     <a href="{{ action('TrainingController@addTraining') }}"><button type="button" class="btn btn-primary btn-lg">Añadir nueva clase</button></a>
     </div>
     <div class="col">
-    <a href=/menuAdmin><button type="button" class="btn btn-primary btn-lg">Volver</button></a>
+    <a href=/MiCuenta><button type="button" class="btn btn-primary btn-lg">Volver</button></a>
     </div>
   </div>
 </div>
