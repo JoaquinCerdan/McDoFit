@@ -10,4 +10,8 @@
   <p class="mb-0">¡Y no olvides llevar la toalla!</p>
 </div>
 </div>
+
+<br><a href="{{ action('TrainingController@listTrainings') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+
+
 @endsection

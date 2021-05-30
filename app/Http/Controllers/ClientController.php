@@ -128,10 +128,24 @@ class ClientController extends Controller
     }
 
     public function apuntarseAUnaClase($idClase,$idClient){
+        
         $carbon = new Carbon();
         $meter = true;
+
+        $cliente = new Client();
+        $cliente = Client::findOrFail($idClient);
+
+        $training = new Training();
+        $training = Training::findOrFail($idClase);
+
+        
+
+
+
         //para consultar
         //$resultado = DB::table('client_training')->where('client_id',$idClient);
+        
+        
         $resultado = DB::table('client_training')->get();
 
         foreach($resultado as $r){
@@ -143,7 +157,7 @@ class ClientController extends Controller
 
         if($meter == true){
             //para insertar
-            DB::table('client_training')->insert(['client_id'=>$idClient,'training_id'=>$idClase]);
+            $training->clients()->savemany([$cliente]);
             return view("apuntadoAClaseCorrecto");
         }else{
             return view("apuntadoAClaseIncorrecto");

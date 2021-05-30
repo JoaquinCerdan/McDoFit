@@ -11,7 +11,7 @@
         <div class="col-6">
         <div class="panel panel-info">
         <div class="panel-heading">
-        <h2>Clases que se imparten hoy:</h2>
+        <h2>Total clases:</h2>
         </div>
         <div class="panel-body">
         {{$totalEntrenadores}}
@@ -22,7 +22,7 @@
         <div class="col-6">
         <div class="panel panel-info">
         <div class="panel-heading">
-        <h2>Minutos totales de clase hoy:</h2>
+        <h2>Minutos totales de clase:</h2>
         </div>
         <div class="panel-body">
         {{$minutosTotal}}
@@ -31,6 +31,54 @@
         </div>
 
     </div>
+
+    <div class="row">
+        <div class="col-12">
+        <div class="panel panel-info">
+        <div class="panel-heading">
+        <h2>Clases con nivel básico:</h2>
+        </div>
+        <div class="panel-body">
+        {{$basico}}
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+        <div class="panel panel-warning">
+        <div class="panel-heading">
+        <h2>Clases con nivel medio:</h2>
+        </div>
+        <div class="panel-body">
+        {{$medio}}
+        </div>
+        </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+        <div class="panel panel-danger">
+        <div class="panel-heading">
+        <h2>Clases con nivel avanzado:</h2>
+        </div>
+        <div class="panel-body">
+        {{$avanzado}}
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+        <a href="{{ action('MiCuentaController@menuCuenta') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Volver</button></a>
+        </div>
+    </div>
+
+   
 </div>
 
 @endsection
