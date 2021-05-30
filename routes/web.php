@@ -102,5 +102,5 @@ Route::post('viewOneClient/{id}','ClientController@viewOneClient');
 // RentalMaterial
 
 Route::get('materiales','MaterialController@listRentalMaterial');
-Route::get('alquilarMaterial','MaterialController@alquilarMaterial');
-Route::post('alquilarMaterial','MaterialController@alquilarMaterial');
+Route::get('AlquilarMateriales','MaterialController@alquilarMaterial');
+Route::post('AlquilarMateriales','MaterialController@alquilarMaterial');

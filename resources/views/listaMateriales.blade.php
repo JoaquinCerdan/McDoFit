@@ -27,17 +27,21 @@
             @if(Auth::user()->role == 'Client')
                 <td>
                     @if ($material->client_id == NULL)
-                        <a href="{{ action('MaterialController@alquilarMaterial', [Auth::user()->client_id, $material]) }}">
+                        
+                        <a href="{{ action('MaterialController@alquilarMaterial', [Auth::user()->client->id, $material->id]) }}">
+                            
                             <button class="btn btn-primary"> 
                                 Alquilar
                             </button>
                         </a>
+                        
                     @else
                         <button class="btn btn-primary" disabled> 
                             Alquilar
                         </button>
                     @endif
                 </td>
+
             @endif
         @endauth
     </tr>
